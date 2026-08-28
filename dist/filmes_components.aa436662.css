@@ -1,0 +1,282 @@
+:root {
+  color: #30271c;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  background: #fffdf8;
+  font-family: Trebuchet MS, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffdf8;
+  background-image: radial-gradient(circle at 92% 4%, #cd9d3926, #0000 25%), linear-gradient(135deg, #fffdf8, #f8f1e4);
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: scroll;
+  background-origin: padding-box;
+  background-clip: border-box;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.cabecalho {
+  border-bottom: 1px solid #d6b568;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  width: min(1120px, 100% - 48px);
+  margin: 0 auto;
+  padding: 30px 0 24px;
+  display: flex;
+}
+
+.cabecalho h1 {
+  color: #30271c;
+  letter-spacing: -.04em;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  font-weight: 400;
+}
+
+.cabecalho h1:before {
+  content: "";
+  background: #c99a32;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  margin: 0 12px 2px 0;
+  display: inline-block;
+}
+
+.botao-adicionar, .pagina-adicionar button[type="submit"] {
+  color: #fffdf8;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: #b88620;
+  border: 1px solid #b88620;
+  border-radius: 4px;
+  padding: 13px 22px;
+  font-size: .78rem;
+  font-weight: 800;
+  transition: background .16s, transform .16s, box-shadow .16s;
+  box-shadow: 0 5px #8e6818;
+}
+
+.botao-adicionar:hover, .pagina-adicionar button[type="submit"]:hover {
+  background: #d0a33e;
+  transform: translateY(2px);
+  box-shadow: 0 3px #8e6818;
+}
+
+.lista-filmes, .pagina-adicionar {
+  width: min(1120px, 100% - 48px);
+  margin: 0 auto;
+  padding: 68px 0 88px;
+}
+
+.lista-filmes h2, .pagina-adicionar h2 {
+  color: #30271c;
+  letter-spacing: -.06em;
+  margin: 0 0 34px;
+  font-family: Georgia, serif;
+  font-size: clamp(2.4rem, 7vw, 5.4rem);
+  font-weight: 400;
+  line-height: .95;
+}
+
+.lista-filmes > p {
+  color: #756956;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #c99a32;
+  border-radius: 8px;
+  margin: 0;
+  padding: 58px 24px;
+}
+
+.lista-filmes ul {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.lista-filmes li {
+  background: #fff;
+  border: 1px solid #e1d4b9;
+  border-radius: 8px;
+  min-height: 245px;
+  padding: 28px;
+  animation: .42s both aparecer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 24px #5d44151a;
+}
+
+.lista-filmes li:nth-child(2n) {
+  background: #fffaf0;
+}
+
+.lista-filmes li:before {
+  content: "";
+  background: linear-gradient(90deg, #9b701a, #e4c46e, #9b701a);
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.lista-filmes li h3 {
+  color: #30271c;
+  margin: 0 0 25px;
+  font-family: Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.lista-filmes li p {
+  color: #756956;
+  margin: 10px 0;
+  font-size: .9rem;
+}
+
+.pagina-adicionar {
+  max-width: 780px;
+}
+
+.pagina-adicionar form {
+  background: #fff;
+  border: 1px solid #e1d4b9;
+  border-top: 5px solid #c99a32;
+  border-radius: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  padding: 34px;
+  display: grid;
+  box-shadow: 0 10px 24px #5d44151a;
+}
+
+.pagina-adicionar label {
+  color: #756956;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  gap: 9px;
+  font-size: .74rem;
+  font-weight: 800;
+  display: grid;
+}
+
+.pagina-adicionar input {
+  color: #30271c;
+  background: #fffdf8;
+  border: 1px solid #d9c7a1;
+  border-radius: 4px;
+  outline: 0;
+  width: 100%;
+  padding: 14px 15px;
+  transition: border-color .16s, box-shadow .16s;
+}
+
+.pagina-adicionar input:focus {
+  border-color: #b88620;
+  box-shadow: 0 0 0 4px #c89a322e;
+}
+
+.pagina-adicionar form > div {
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.pagina-adicionar button[type="button"] {
+  color: #756956;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid #cdbd9e;
+  border-radius: 4px;
+  padding: 12px 21px;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.pagina-adicionar button[type="button"]:hover {
+  color: #8e6818;
+  border-color: #b88620;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (width <= 760px) {
+  .cabecalho, .lista-filmes, .pagina-adicionar {
+    width: min(100% - 32px, 560px);
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 22px;
+  }
+
+  .botao-adicionar {
+    width: 100%;
+  }
+
+  .lista-filmes, .pagina-adicionar {
+    padding-top: 48px;
+  }
+
+  .lista-filmes ul, .pagina-adicionar form {
+    grid-template-columns: 1fr;
+  }
+
+  .pagina-adicionar form {
+    padding: 22px;
+  }
+}
+
+@media (width <= 420px) {
+  .lista-filmes h2, .pagina-adicionar h2 {
+    font-size: 3rem;
+  }
+
+  .pagina-adicionar form > div {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+}
+/*# sourceMappingURL=filmes_components.aa436662.css.map */

@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "parcel index.html",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
